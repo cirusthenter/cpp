@@ -40,15 +40,16 @@ int counter::get_current_total_time()
     return time_for_customer * current_customers;
 }
 
-template <size_t n> 
-int find_min_counter(counter (&counters)[n])
+int find_min_counter(counter* counters, int counter_size)
 {
-    int min_time = 10000000;
+    int min_time = counters[0].get_current_total_time();
+    int min_time_for_customer = counters[0].get_time_for_customer();
     int min_index = 0;
 
-    for (int i = 1; i < counters.size(); ++i) {
-        if (counters[i].get_current_total_time() < min_time) {
+    for (int i = 1; i < counter_size; ++i) {
+        if (counters[i].get_current_total_time() <= min_time && counters[i].get_time_for_customer() <= min_time_for_customer) {
             min_time = counters[i].get_current_total_time();
+            min_time_for_customer = counters[i].get_time_for_customer();
             min_index = i;
         }
     }
@@ -74,7 +75,7 @@ int main(){
     }
 
     for (int i = num_counters; i < num_customers; ++i) {
-        int min_index = find_min_counter(counters);
+        int min_index = find_min_counter(counters, num_counters);
         counters[min_index].increment_current_customers();
     }
 
