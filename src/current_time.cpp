@@ -14,6 +14,6 @@ int main()
         length = time_s.length();
         time_s = time_s.substr(0, length - 1);
         std::cout << "\r" << time_s
-                  << std::flush << "\n";
+                  << std::flush;
     }
 }
