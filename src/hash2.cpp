@@ -15,7 +15,7 @@ int hash_f(int max_n)
     long long a, b, c, d;
     long long result;
     std::pair<int, int> cd;
-    std::unordered_multimap<long long, std::pair<int, int>> umap;
+    std::unordered_multimap<long long, std::pair<int, int> > umap;
     int cnt = 0;
 
     for (c = 1; c <= max_n; c++) {
@@ -71,7 +71,7 @@ int On3(int max_n)
     for (int a = 1; a <= max_n; ++a) {
         for (int b = 1; b <= max_n; ++b) {
             for (int c = 1; c <= max_n; ++c) {
-                int d = (int)round(std::cbrt(cube(a, b) - c * c * c));
+                int d = std::cbrt(cube(a, b) - c * c * c);
                 if (d < 1 || max_n < d)
                     continue;
                 // std::cout << "result == " << cube(a, b) << std::endl;
@@ -112,10 +112,8 @@ void print_result(int max_n)
 
 int main()
 {
-    freopen("output.txt", "w", stdout);
-    for (int i = 100; i <= 1000; i += 100) {
-        print_result(i);
-    }
+//    freopen("yeahyeah.txt", "w", stdout);
+	print_result(50);
 
     return 0;
 }

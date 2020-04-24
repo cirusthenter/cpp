@@ -71,7 +71,7 @@ int On3(int max_n)
     for (int a = 1; a <= max_n; ++a) {
         for (int b = 1; b <= max_n; ++b) {
             for (int c = 1; c <= max_n; ++c) {
-                int d = (int)round(std::cbrt(cube(a, b) - c * c * c));
+                int d = std::cbrt(cube(a, b) - c * c * c);
                 if (d < 1 || max_n < d)
                     continue;
                 // std::cout << "result == " << cube(a, b) << std::endl;

@@ -1,0 +1,6 @@
+N: 100
+On4 : (count: 20260, time: 562 ms)
+On3 : (count: 20260, time: 27 ms)
+hash: (count: 20260, time: 8 ms)
+
+N: 200

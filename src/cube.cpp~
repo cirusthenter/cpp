@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cmath>
+
+#define N 50
+
+long long cube(long long l, long long r)
+{
+	return l*l*l* + r*r*r;
+}
+
+int main()
+{
+	int a = 50;
+	int b = 37;
+	int c = 50;
+
+	long long d = std::cbrt(cube(a, b) - c * c* c);
+	if (d <= 0 || N < d) std::cout << "N/A" << std::endl;
+	std::cout << "d == " << d << std::endl;
+
+	if (cube(a, b) == cube(c, d))
+		std::cout << "same" << std::endl;
+	else std::cout << "not the same" << std::endl;
+
+
+	return 0;
+}
